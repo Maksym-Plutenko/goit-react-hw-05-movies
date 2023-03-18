@@ -1,15 +1,32 @@
-import PropTypes from "prop-types";
-import apiserver from "../../utilites/apiserver";
+import PropTypes from 'prop-types';
+import { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+
+import apiserver from '../../utilites/apiserver';
 
 const Home = () => {
-    const resp = apiserver.trending();
-    console.log('resp is...');
-    console.log(resp);
+  const [films, setFilms] = useState([]);
 
-    return (
-        <h2>Trending today</h2>
-    )
+  useEffect(() => {
+    async function getTrending() {
+      const response = await apiserver.trending();
+      setFilms(response);
+    }
+    getTrending();
+  }, []);
 
-}
+  return (
+    <>
+      <h2>Trending today</h2>
+      <ul>
+        {films.map(film => (
+          <li key={film.id}>
+            <NavLink to={`/movies/${film.id}`}>{film.title}</NavLink>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+};
 
 export default Home;
