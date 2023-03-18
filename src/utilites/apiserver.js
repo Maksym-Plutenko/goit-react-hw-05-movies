@@ -6,11 +6,11 @@ const apiserver = {
   async trending() {
     axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
     const response = await axios.get(`trending/movie/day?${this.key}`);
-    // console.log(response);
-    // console.log(response.data);
-    // console.log(response.data.results);
     return response.data.results;
   },
+
+
+
 };
 
 // https://api.themoviedb.org/3/trending/movie/day?api_key=c8502b1448a0f91350559a97552ddf48
