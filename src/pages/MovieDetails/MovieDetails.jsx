@@ -17,7 +17,7 @@ const MovieDetails = () => {
     }
 
     getDetails(movieId);
-  }, []);
+  }, [movieId]);
 
   const {backdrop_path, original_title, popularity, overview, genres} = details;
 

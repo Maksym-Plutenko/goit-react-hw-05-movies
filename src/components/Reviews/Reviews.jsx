@@ -15,7 +15,7 @@ const Reviews = () => {
     }
 
     getReviews(movieId);
-  }, []);
+  }, [movieId]);
 
   return (
     <div>

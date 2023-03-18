@@ -15,7 +15,7 @@ const Cast = () => {
     }
 
     getCast(movieId);
-  }, []);
+  }, [movieId]);
 
   return (
     <ul>
