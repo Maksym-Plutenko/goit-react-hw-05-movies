@@ -25,7 +25,7 @@ const MovieDetails = () => {
     <section>
       <p>Go back</p>
       <div>
-        {backdrop_path && <img src={`https://image.tmdb.org/t/p/w500${backdrop_path}`} alt="" />}
+        {backdrop_path && <img src={`https://image.tmdb.org/t/p/w500${backdrop_path}`} alt="film poster" />}
         <div>
           <h2>{original_title}</h2>
           <p>User Score: {popularity}</p>

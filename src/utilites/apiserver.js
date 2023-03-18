@@ -14,17 +14,24 @@ const apiserver = {
   async details(id) {
     axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
     const response = await axios.get(`movie/${id}?${this.key}&language=en-US`);
-    // console.log(response);
-    // console.log(response.data);
     return response.data;
   },
 
   async cast(id) {
-
+    axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
+    const response = await axios.get(`movie/${id}/credits?${this.key}&language=en-US`);
+    // console.log(response);
+    // console.log(response.data.cast);
+    return response.data.cast;
   },
 
   async rewiews(id) {
-
+    axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
+    const response = await axios.get(`movie/${id}/reviews?${this.key}&language=en-US`);
+    // console.log(response);
+    // console.log(response.data);
+    // console.log(response.data.results);
+    return response.data.results;
   },
 
 };
