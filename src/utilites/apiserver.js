@@ -9,7 +9,23 @@ const apiserver = {
     return response.data.results;
   },
 
+  // async seach() {},
 
+  async details(id) {
+    axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
+    const response = await axios.get(`movie/${id}?${this.key}&language=en-US`);
+    // console.log(response);
+    // console.log(response.data);
+    return response.data;
+  },
+
+  async cast(id) {
+
+  },
+
+  async rewiews(id) {
+
+  },
 
 };
 
