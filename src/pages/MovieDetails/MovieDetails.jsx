@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
-import { useParams, Link, Outlet } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { useParams, useLocation, Link, Outlet } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 
 import apiserver from '../../utilites/apiserver';
@@ -8,7 +8,49 @@ import apiserver from '../../utilites/apiserver';
 const MovieDetails = () => {
   const [details, setDetails] = useState({});
   const { movieId } = useParams();
-  // console.log(movieId);
+
+  const from = useRef();
+  const location = useLocation();
+  useEffect(() => {
+    if (location.state) {
+      from.current = location.state;
+      // console.log(from);
+    } else {
+      from.current = "/";
+    }
+
+  }, [])
+
+
+
+
+
+  // const from = useRef({
+  //   pathname: "/",
+  //   search: "",
+  //   hash: "",
+  //   state: null,
+  //   key: "r0pqenq3"
+  // });
+
+  // const [from, setFrom] = useState({
+  //   pathname: "/",
+  //   search: "",
+  //   hash: "",
+  //   state: null,
+  //   key: "r0pqenq3"
+  // });
+  
+
+
+  // const location = useLocation();
+
+
+  // console.log(location);
+  // console.log(location.state);
+  // if (location.state) {
+  //   from = location.state;
+  // }
 
   useEffect(() => {
     async function getDetails(id) {
@@ -23,7 +65,7 @@ const MovieDetails = () => {
 
   return (
     <section>
-      <p>Go back</p>
+      <Link to={from.current}>Go back</Link>
       <div>
         {backdrop_path && <img src={`https://image.tmdb.org/t/p/w500${backdrop_path}`} alt="film poster" />}
         <div>
