@@ -1,5 +1,6 @@
 import { Outlet, NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { Suspense } from 'react';
+// import PropTypes from 'prop-types';
 
 const SharedLayout = () => {
   return (
@@ -11,7 +12,9 @@ const SharedLayout = () => {
         </nav>
       </header>
       <main>
-        <Outlet />
+        <Suspense fallback={<p>Loading...</p>}>
+          <Outlet />
+        </Suspense>
       </main>
     </>
   );

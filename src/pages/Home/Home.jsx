@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 // import { NavLink } from 'react-router-dom';
 
@@ -21,13 +21,6 @@ const Home = () => {
     <>
       <h2>Trending today</h2>
       <Filmlist films={films}/>
-      {/* <ul>
-        {films.map(film => (
-          <li key={film.id}>
-            <NavLink to={`/movies/${film.id}`}>{film.title}</NavLink>
-          </li>
-        ))}
-      </ul> */}
     </>
   );
 };
