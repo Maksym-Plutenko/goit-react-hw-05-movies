@@ -24,7 +24,7 @@ const Cast = () => {
           {actor.profile_path && (
             <img
               src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
-              alt={`${actor.name} photo`}
+              alt={`${actor.name}`}
             />
           )}
           <p>{actor.name}</p>

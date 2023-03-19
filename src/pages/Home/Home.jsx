@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import apiserver from '../../utilites/apiserver';
+import Filmlist from '../../components/Filmlist/Filmlist'
+
 
 const Home = () => {
   const [films, setFilms] = useState([]);
@@ -18,13 +20,14 @@ const Home = () => {
   return (
     <>
       <h2>Trending today</h2>
-      <ul>
+      <Filmlist films={films}/>
+      {/* <ul>
         {films.map(film => (
           <li key={film.id}>
             <NavLink to={`/movies/${film.id}`}>{film.title}</NavLink>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </>
   );
 };

@@ -9,7 +9,14 @@ const apiserver = {
     return response.data.results;
   },
 
-  // async seach() {},
+  async seach(request) {
+    axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
+    const response = await axios.get(`search/movie?${this.key}&language=en-US&query=${request}&page=1&include_adult=false`);
+    // console.log(response);
+    // console.log(response.data);
+    // console.log(response.data.results);
+    return response.data.results;
+  },
 
   async details(id) {
     axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
