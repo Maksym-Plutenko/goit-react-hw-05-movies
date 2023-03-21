@@ -5,6 +5,8 @@ import { useSearchParams } from 'react-router-dom';
 import apiserver from '../../utilites/apiserver';
 import Filmlist from '../../components/Filmlist/Filmlist';
 
+import css from './Movies.module.css';
+
 const Movies = () => {
   const [request, setRequest] = useState('');
   const [films, setFilms] = useState([]);

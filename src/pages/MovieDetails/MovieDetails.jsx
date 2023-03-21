@@ -5,6 +5,8 @@ import { useParams, useLocation, Link, Outlet } from 'react-router-dom';
 
 import apiserver from '../../utilites/apiserver';
 
+import css from './MovieDetails.module.css';
+
 const MovieDetails = () => {
   const [details, setDetails] = useState({});
   const { movieId } = useParams();
@@ -58,8 +60,8 @@ const MovieDetails = () => {
 
   return (
     <section>
-      <Link to={from.current}>Go back</Link>
-      <div>
+      <Link className={css.back} to={from.current}>Go back</Link>
+      <div className={css.container}>
         {backdrop_path && (
           <img
             src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}
@@ -67,13 +69,13 @@ const MovieDetails = () => {
           />
         )}
         <div>
-          <h2>{original_title}</h2>
-          <p>User Score: {popularity}</p>
-          <h3>Overview</h3>
-          <p>{overview}</p>
-          <h3>Genres</h3>
+          <h2 className={css.title}>{original_title}</h2>
+          <p className={css.info}>User Score: {popularity}</p>
+          <h3 className={css.subtitle}>Overview</h3>
+          <p className={css.info}>{overview}</p>
+          <h3 className={css.subtitle}>Genres</h3>
           {genres && (
-            <p>
+            <p className={css.info}>
               {genres.map((genre, index, array) =>
                 index + 1 === array.length ? genre.name : genre.name + ', '
               )}
@@ -82,13 +84,13 @@ const MovieDetails = () => {
         </div>
       </div>
       <div>
-        <p>Additional information</p>
+        <p className={css.additional}>Additional information</p>
         <ul>
-          <li>
-            <Link to="cast">Cast</Link>
+          <li className={css.item}>
+            <Link className={css.link} to="cast">Cast</Link>
           </li>
-          <li>
-            <Link to="reviews">Reviews</Link>
+          <li className={css.item}>
+            <Link className={css.link} to="reviews">Reviews</Link>
           </li>
         </ul>
       </div>

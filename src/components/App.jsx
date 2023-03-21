@@ -21,8 +21,8 @@ export const App = () => {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: 'start',
+        alignItems: 'start',
         fontSize: 40,
         color: '#010101',
       }}
