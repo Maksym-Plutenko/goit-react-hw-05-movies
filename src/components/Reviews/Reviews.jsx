@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 
 import apiserver from '../../utilites/apiserver';
 
+import css from './Reviews.module.css';
+
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
@@ -18,18 +20,18 @@ const Reviews = () => {
   }, [movieId]);
 
   return (
-    <div>
+    <div className={css.container}>
       {reviews.length > 0 ? (
         <ul>
           {reviews.map(review => (
-            <li key={review.id}>
-              <h3>Author: {review.author}</h3>
-              <p>{review.content}</p>
+            <li className={css.item} key={review.id}>
+              <h3 className={css.author}>Author: {review.author}</h3>
+              <p className={css.review}>{review.content}</p>
             </li>
           ))}
         </ul>
       ) : (
-        <p>We don't have any review for this film</p>
+        <p className={css.noreview} >We don't have any review for this film.</p>
       )}
     </div>
   );

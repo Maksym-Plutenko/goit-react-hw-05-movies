@@ -55,16 +55,17 @@ const MovieDetails = () => {
     getDetails(movieId);
   }, [movieId]);
 
-  const { backdrop_path, original_title, popularity, overview, genres } =
+  const { poster_path, original_title, popularity, overview, genres } =
     details;
 
   return (
     <section>
       <Link className={css.back} to={from.current}>Go back</Link>
       <div className={css.container}>
-        {backdrop_path && (
+        {poster_path && (
           <img
-            src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}
+            className={css.poster}
+            src={`https://image.tmdb.org/t/p/w500${poster_path}`}
             alt="film poster"
           />
         )}
@@ -83,8 +84,8 @@ const MovieDetails = () => {
           )}
         </div>
       </div>
-      <div>
-        <p className={css.additional}>Additional information</p>
+      <div className={css.additional}>
+        <p className={css.additional_title}>Additional information</p>
         <ul>
           <li className={css.item}>
             <Link className={css.link} to="cast">Cast</Link>

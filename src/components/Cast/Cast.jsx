@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 
 import apiserver from '../../utilites/apiserver';
 
+import css from './Cast.module.css';
+
 const Cast = () => {
   const [cast, setCast] = useState([]);
   const { movieId } = useParams();
@@ -18,17 +20,18 @@ const Cast = () => {
   }, [movieId]);
 
   return (
-    <ul>
+    <ul className={css.list}>
       {cast.map(actor => (
-        <li key={actor.id}>
+        <li className={css.item} key={actor.id}>
           {actor.profile_path && (
             <img
+              className={css.img}
               src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
               alt={`${actor.name}`}
             />
           )}
-          <p>{actor.name}</p>
-          <p>Character: {actor.character}</p>
+          <p className={css.name}>{actor.name}</p>
+          <p className={css.character}>Character: {actor.character}</p>
         </li>
       ))}
     </ul>
