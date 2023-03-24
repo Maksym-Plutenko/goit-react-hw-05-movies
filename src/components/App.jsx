@@ -8,13 +8,6 @@ const MovieDetails = lazy(() => import('pages/MovieDetails/MovieDetails'));
 const Cast = lazy(() => import('./Cast/Cast'));
 const Reviews = lazy(() => import('./Reviews/Reviews'));
 
-// import SharedLayout from "./SharedLayout/SharedLayout";
-// import Home from "pages/Home/Home";
-// import Movies from "pages/Movies/Movies";
-// import MovieDetails from "pages/MovieDetails/MovieDetails";
-// import Cast from "./Cast/Cast";
-// import Reviews from "./Reviews/Reviews";
-
 export const App = () => {
   return (
     <div

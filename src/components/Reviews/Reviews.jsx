@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -31,7 +30,7 @@ const Reviews = () => {
           ))}
         </ul>
       ) : (
-        <p className={css.noreview} >We don't have any review for this film.</p>
+        <p className={css.noreview}>We don't have any review for this film.</p>
       )}
     </div>
   );

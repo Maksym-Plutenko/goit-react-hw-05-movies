@@ -1,8 +1,7 @@
 import { Outlet, NavLink } from 'react-router-dom';
 import { Suspense } from 'react';
-// import PropTypes from 'prop-types';
 
-import css from './SharedLayout.module.css'
+import css from './SharedLayout.module.css';
 
 const SharedLayout = () => {
   return (
@@ -21,7 +20,5 @@ const SharedLayout = () => {
     </>
   );
 };
-
-// active
 
 export default SharedLayout;

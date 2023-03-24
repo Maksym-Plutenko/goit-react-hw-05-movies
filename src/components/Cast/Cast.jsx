@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -28,9 +27,14 @@ const Cast = () => {
               className={css.img}
               src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
               alt={`${actor.name}`}
-              
             />
-           ) : <img className={css.img} src="https://freesvg.org/img/1367934593.png" alt="not found" />  } 
+          ) : (
+            <img
+              className={css.img}
+              src="https://freesvg.org/img/1367934593.png"
+              alt="not found"
+            />
+          )}
           <p className={css.name}>{actor.name}</p>
           <p className={css.character}>Character: {actor.character}</p>
         </li>

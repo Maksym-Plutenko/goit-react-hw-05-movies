@@ -1,18 +1,10 @@
 .container {
-    /* display: flex;
-    gap: 5px; */
-    /* width: 500px; */
-    /* display: block; */
-    /* margin-left: auto; */
-    /* margin-right: auto; */
-    /* width: 100%; */
-    margin-left: 20px;
-    margin-top: 25px;
+  margin-left: 20px;
+  margin-top: 25px;
 }
 
 .form {
-    display: flex;
-    /* gap: 5px; */
+  display: flex;
 }
 
 .input {

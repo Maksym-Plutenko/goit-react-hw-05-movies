@@ -1,12 +1,11 @@
 .item {
-    margin-left: 50px;
+  margin-left: 50px;
 }
 
 .item::marker {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 .link {
-    font-size: 25px;
-    /* margin-left: 50px; */
+  font-size: 25px;
 }

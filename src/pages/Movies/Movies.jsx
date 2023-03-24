@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
@@ -34,13 +33,8 @@ const Movies = () => {
   };
 
   const onSubmit = evt => {
-    // async function filmSeach(request) {
-    //   const response = await apiserver.seach(request);
-    //   setFilms(response);
-    // }
-
     evt.preventDefault();
-    // filmSeach(request);
+
     setSeachParam({ request });
     setRequest('');
   };

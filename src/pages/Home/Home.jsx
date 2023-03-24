@@ -1,9 +1,7 @@
-// import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
-// import { NavLink } from 'react-router-dom';
 
 import apiserver from '../../utilites/apiserver';
-import Filmlist from '../../components/Filmlist/Filmlist'
+import Filmlist from '../../components/Filmlist/Filmlist';
 
 import css from './Home.module.css';
 
@@ -21,7 +19,7 @@ const Home = () => {
   return (
     <>
       <h2 className={css.title}>Trending today</h2>
-      <Filmlist films={films}/>
+      <Filmlist films={films} />
     </>
   );
 };

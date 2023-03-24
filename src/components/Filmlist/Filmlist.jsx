@@ -10,7 +10,13 @@ const Filmlist = ({ films }) => {
     <ul>
       {films.map(film => (
         <li className={css.item} key={film.id}>
-          <NavLink className={css.link} to={`/movies/${film.id}`} state={location}>{film.title}</NavLink>
+          <NavLink
+            className={css.link}
+            to={`/movies/${film.id}`}
+            state={location}
+          >
+            {film.title}
+          </NavLink>
         </li>
       ))}
     </ul>
@@ -18,7 +24,7 @@ const Filmlist = ({ films }) => {
 };
 
 Filmlist.propTypes = {
-    films: PropTypes.arrayOf(PropTypes.object).isRequired,
-}
+  films: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default Filmlist;
