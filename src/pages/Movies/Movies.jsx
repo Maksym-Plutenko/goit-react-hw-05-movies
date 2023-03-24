@@ -13,6 +13,11 @@ const Movies = () => {
   const [seachParam, setSeachParam] = useSearchParams({});
   const seachRequest = seachParam.get('request');
 
+  let message = '';
+  if (seachRequest) {
+    message = 'We cannot find any film with such name.';
+  }
+
   useEffect(() => {
     async function filmSeach(request) {
       const response = await apiserver.seach(request);
@@ -36,17 +41,29 @@ const Movies = () => {
 
     evt.preventDefault();
     // filmSeach(request);
-    setSeachParam({request});
+    setSeachParam({ request });
     setRequest('');
   };
 
   return (
     <div className={css.container}>
       <form className={css.form} onSubmit={onSubmit}>
-        <input className={css.input} type="text" onChange={onChange} value={request} />
-        <button className={css.button} type="submit">Seach</button>
+        <input
+          className={css.input}
+          type="text"
+          onChange={onChange}
+          value={request}
+        />
+        <button className={css.button} type="submit">
+          Seach
+        </button>
       </form>
-      <Filmlist films={films} />
+
+      {films.length > 0 ? (
+        <Filmlist films={films} />
+      ) : (
+        <p className={css.nofilm}>{message}</p>
+      )}
     </div>
   );
 };
