@@ -65,13 +65,13 @@ const MovieDetails = () => {
         Go back
       </Link>
       <div className={css.container}>
-        {poster_path && (
+        {poster_path ? (
           <img
             className={css.poster}
             src={`https://image.tmdb.org/t/p/w500${poster_path}`}
             alt="film poster"
           />
-        )}
+        ) : <img src="https://c1.wallpaperflare.com/preview/136/62/471/page-not-found-light-shadow-hotel-thumbnail.jpg" alt="poster not found" />  }
         <div>
           <h2 className={css.title}>{original_title}</h2>
           <p className={css.info}>User Score: {popularity}</p>
