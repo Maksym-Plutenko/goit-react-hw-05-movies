@@ -11,14 +11,16 @@ const MovieDetails = () => {
   const [details, setDetails] = useState({});
   const { movieId } = useParams();
 
-  const from = useRef();
+  const from = useRef(null);
   const location = useLocation();
   useEffect(() => {
-    if (location.state) {
-      from.current = location.state;
-      // console.log(from);
-    } else {
-      from.current = '/';
+    if (!from.current) {
+      if (location.state) {
+        from.current = location.state;
+        // console.log(from);
+      } else {
+        from.current = '/';
+      }
     }
   }, [location.state]);
 
@@ -55,12 +57,13 @@ const MovieDetails = () => {
     getDetails(movieId);
   }, [movieId]);
 
-  const { poster_path, original_title, popularity, overview, genres } =
-    details;
+  const { poster_path, original_title, popularity, overview, genres } = details;
 
   return (
     <section>
-      <Link className={css.back} to={from.current}>Go back</Link>
+      <Link className={css.back} to={from.current}>
+        Go back
+      </Link>
       <div className={css.container}>
         {poster_path && (
           <img
@@ -88,10 +91,14 @@ const MovieDetails = () => {
         <p className={css.additional_title}>Additional information</p>
         <ul>
           <li className={css.item}>
-            <Link className={css.link} to="cast">Cast</Link>
+            <Link className={css.link} to="cast">
+              Cast
+            </Link>
           </li>
           <li className={css.item}>
-            <Link className={css.link} to="reviews">Reviews</Link>
+            <Link className={css.link} to="reviews">
+              Reviews
+            </Link>
           </li>
         </ul>
       </div>
